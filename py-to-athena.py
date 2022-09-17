@@ -29,6 +29,6 @@ def lambda_handler(event, context):
             break
         except Exception as err:
             if "not finished" in str(err):
-                time.sleep(0.100)
+                time.sleep(0.01)
             else:
                 raise err
