@@ -1,5 +1,5 @@
 # python-on-aws-databases
-aws database and s3 data transfers moved by python: pep-8 examples 
+AWS database and s3 data transfers moved by python: pep-8 examples 
 
 This is an ongoing project aimed at showcasing connectivity and transfer of data to nine AWS database types. 
 All of the files are python based, utilizing fragments from previous data pipeline projects. 
