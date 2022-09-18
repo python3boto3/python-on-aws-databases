@@ -1,7 +1,6 @@
 import pyodbc
 
 
-
 def lambda_handler(event, context):
 
     conn = pyodbc.connect('Driver={SQL Server};'
