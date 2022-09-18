@@ -5,4 +5,4 @@ This is an ongoing project aimed at showcasing connectivity and transfer of data
 All of the files are python based, utilizing fragments from previous data pipeline projects. 
 These include PostgreSQL, MySQL, MariaDB, Aurora, Athena, DynamoDB, Redshift, SQL Server and Oracle. 
 The aim of the project is to create 9 methods which are all bucket triggered.
-This will create a WORM response, re-purposing the data and uploading each data cut to all 9 different types of database. 
+This will re-purpose the data and upload each data cut to each of the 9 different types of database. 
