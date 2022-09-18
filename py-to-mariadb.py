@@ -91,3 +91,4 @@ for x in create_cursor:
 # close connection
 
 mariadb_connection.close()
+
