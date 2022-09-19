@@ -7,7 +7,6 @@ def lambda_handler(event, context):
 
     host = 'redshift-cluster-1.cjqx1l9dqfg2.us-east-1.redshift.amazonaws.com'
     port = 5439
-    database = 'dev'
     db_name = 'dev'
     
     cluster_identifier = 'redshift-cluster-1'
@@ -19,7 +18,7 @@ def lambda_handler(event, context):
         cluster_creds = cr.get_cluster_credentials(DbUser=rs_user, DbName=db_name, ClusterIdentifier=cluster_identifier, AutoCreate=False)
         temp_user = cluster_creds['DbUser']
         temp_pswd = cluster_creds['DbPassword']
-        conn = psycopg2.connect(database, host=host, port=port, user=temp_user, password=temp_pswd)
+        conn = psycopg2.connect(db_name, host=host, port=port, user=temp_user, password=temp_pswd)
         
         conn.close
     except:
