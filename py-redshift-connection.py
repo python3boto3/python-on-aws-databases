@@ -19,7 +19,7 @@ def lambda_handler(event, context):
         cluster_creds = cr.get_cluster_credentials(DbUser=rs_user, DbName=db_name, ClusterIdentifier=cluster_identifier, AutoCreate=False)
         temp_user = cluster_creds['DbUser']
         temp_pswd = cluster_creds['DbPassword']
-        conn = psycopg2.connect(databasedb_name, host=host, port=port, user=temp_user, password=temp_pswd)
+        conn = psycopg2.connect(database, host=host, port=port, user=temp_user, password=temp_pswd)
         
         conn.close
     except:
