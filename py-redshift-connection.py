@@ -30,6 +30,17 @@ def lambda_handler(event, context):
             password=temp_pswd
             )
 
-        conn.close
+        curs = conn.cursor()
+
+        query = "DELETE FROM dev.public.qpocsredshiftdemo;"
+
+        curs.execute(query)
+
+        conn.commit()
+
+        curs.close()
+
+        conn.close()
+
     except:
         print(1)
