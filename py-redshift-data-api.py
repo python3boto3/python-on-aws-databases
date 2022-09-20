@@ -16,6 +16,6 @@ resp = rsd.execute_statement(
     Database="dev",
     ClusterIdentifier='redshift-cluster-1',
     DbUser="redshift_data_api_user",
-    Sql="DELETE FROM dev.",
+    Sql="DELETE FROM public.cqpocsredshiftdemo",
     WithEvent=True
 )
