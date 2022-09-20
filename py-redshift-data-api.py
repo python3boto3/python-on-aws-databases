@@ -15,7 +15,7 @@ rsd = boto3.client('redshift-data', region_name='us-east-1')
 resp = rsd.execute_statement(
     Database="dev",
     ClusterIdentifier='redshift-cluster-1',
-    DbUser="redshift_data_api_user",
+    DbUser="awsuser",
     Sql="DELETE FROM public.cqpocsredshiftdemo",
     WithEvent=True
 )
