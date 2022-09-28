@@ -1,4 +1,4 @@
-# requires pip install python-dotenv, pip install paramilo as python layer
+# requires pip install python-dotenv, pip install paramiko as python layer
 
 import os
 from dotenv import load_dotenv
