@@ -6,3 +6,4 @@ All of the files are python based, utilizing fragments from previous data pipeli
 These include PostgreSQL, MySQL, MariaDB, Aurora, Athena, DynamoDB, Redshift, SQL Server and Oracle. 
 The aim of the project is to create methods which are all bucket triggered.
 This will re-purpose the data and upload each data cut to each of the 9 different types of database. 
+MemoryDB and Neptune are next on the list  of additions. 
