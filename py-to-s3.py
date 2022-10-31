@@ -11,3 +11,6 @@ object.put(Body=some_binary_data)
 # Method 2: Client.put_object()
 client = boto3.client('s3')
 client.put_object(Body=more_binary_data, Bucket='my_bucket_name', Key='my/key/including/anotherfilename.txt')
+
+
+
