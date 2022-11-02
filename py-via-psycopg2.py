@@ -14,7 +14,7 @@ mkdir folder
 cd folder
 virtualenv v-env
 source ./v-env/bin/activate             
-pip install psycopg2-binary      <-- The official library
+pip install psycopg2-binary     # <-- The official library
 deactivate
 
 
