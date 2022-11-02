@@ -47,7 +47,7 @@ try:
 
     # Verifies that the connection worked
     cursor = conn.cursor()
-    cursor.execute("select catname FROM dev.public.category")                                       # # # # # # # # # # # # # 
+    cursor.execute("select airlineorderinfo FROM dev.public.category")                                       # # # # # # # # # # # # # 
     results = cursor.fetchall()
     sqlResult = results
     if (results is None):    
