@@ -60,6 +60,8 @@ try:
 except:
    print('Failed to open database connection.')
 
+
+
 '''
 (Ex-VPC):
 
