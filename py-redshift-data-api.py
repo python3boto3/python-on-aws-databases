@@ -60,3 +60,61 @@ try:
 except:
    print('Failed to open database connection.')
 
+'''
+(Ex-VPC):
+
+Local test development only. 
+
+To allow Redshift accessibility outside the vpc: add an elastic address (EIP)
+
+On the cluster console, add Actions: Modify publicly accessible setting.
+
+Enable .. and reference the EIP
+
+Wait 10 minutes to allow the cluster to modify. 
+
+
+ignore this step for the Redshift on Shift4 because it communicates within the vpc.
+
+-------------------------------------------------------
+
+(In-VPC):
+
+Create  Lambda-layer.
+
+https://towardsdatascience.com/python-packages-in-aws-lambda-made-easy-8fbc78520e30
+
+
+mkdir folder
+cd folder
+virtualenv v-env
+source ./v-env/bin/activate             
+pip install psycopg2-binary      <-- The official library
+deactivate
+
+
+mkdir python
+cd python
+cp -r ../v-env/lib64/python3.7/site-packages/* .
+cd ..
+zip -r psycopg2_layer.zip python
+aws lambda publish-layer-version --layer-name psycopg2 --zip-file fileb://psycopg2_layer.zip --compatible-runtimes python3.7
+
+
+
+Add 30 seconds, 1024MB memory 
+
+and these permissions to the lambda: 
+
+AWSLambdaBasicExecutionRole
+AmazonRedshiftFullAccess	
+AmazonRedshiftAllCommandsFullAccess
+AmazonRedshiftDataFullAccess
+'''
+
+
+
+
+
+
+
