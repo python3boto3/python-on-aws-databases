@@ -82,7 +82,7 @@ ignore this step for the Redshift on Shift4 because it communicates within the v
 
 (In-VPC):
 
-Create  Lambda-layer.
+Create  Lambda-layer. On Cloud9 only
 
 https://towardsdatascience.com/python-packages-in-aws-lambda-made-easy-8fbc78520e30
 
