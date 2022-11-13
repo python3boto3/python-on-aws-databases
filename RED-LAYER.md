@@ -31,7 +31,7 @@ On Cloud9 only  basic default t2.micro ami linux settings
 
 ---
 ## <span style="color:gray" fontstyle="bold">Cloud9 script: </span>
-mkdir folder
+_(Window new terminal)_
 
 cd folder
 
