@@ -46,20 +46,20 @@ rows2 = ""
 
 #open the redshift connection
 client = session.client(service_name='redshift',
-                        region_name='us-east-1')                                                                        # # # # # # # # # # # # # 
+                        region_name='us-east-1')                                                                    
 
 # using boto3 to get the Database token instead of hardcoding it in the code
 
 cluster_creds = client.get_cluster_credentials(
-                            DbUser='awsuser',                                                                           # # # # # # # # # # # # # 
-                            DbName='dev',                                                                               # # # # # # # # # # # # # 
-                            ClusterIdentifier='redshift-cluster-1',                                                     # # # # # # # # # # # # #
+                            DbUser='awsuser',                                                                          
+                            DbName='dev',                                                                               
+                            ClusterIdentifier='redshift-cluster-1',                                                     
                             AutoCreate=False)
 
 try:
     # Database connection below that uses the DbPassword that boto3 returned
     conn = psycopg2.connect(        
-                host = 'redshift-cluster-1.abcd1m2abcd2.us-east-1.redshift.amazonaws.com',                              # # # # # # # # # # # # # 
+                host = 'redshift-cluster-1.abcd1m2abcd2.us-east-1.redshift.amazonaws.com',                              
                 port = '5439',
                 user = cluster_creds['DbUser'],
                 password = cluster_creds['DbPassword'],
@@ -69,7 +69,7 @@ try:
     # Verifies that the connection worked
     cursor = conn.cursor()
     #select fields FROM input"
-    cursor.execute("select distinct za, zb FROM dev.public.source_tbl")                  # # # # # # # # # # # # # 
+    cursor.execute("select distinct za, zb FROM dev.public.source_tbl")                  
     results = cursor.fetchall()
     sqlResult = results
     if (results is None):    
