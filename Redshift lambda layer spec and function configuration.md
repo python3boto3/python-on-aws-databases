@@ -16,9 +16,9 @@ Enable .. and reference the EIP
 Wait 10 minutes to allow the cluster to modify. 
 
 
-
+---
  
-## <span style="color:gray" fontstyle="bold">Create Lambda layer: </span>
+## <span style="color:gray" fontstyle="bold">Create lambda layer: </span>
 On Cloud9 only  basic default t2.micro ami linux settings
  
 
@@ -35,13 +35,16 @@ cd python
 cp -r ../v-env/lib64/python3.7/site-packages/* .
 cd ..
 zip -r psycopg2_bin_layer.zip python
-aws lambda publish-layer-version --layer-name psycopg2binary --zip-file fileb://psycopg2_bin_layer.zip --compatible-runtimes python3.7
+aws lambda publish-layer-version --layer-name psycopg2binary --zip-file fileb://
+psycopg2_bin_layer.zip --compatible-runtimes python3.7
 
 ---
 
 
 ## <span style="color:gray" fontstyle="bold">Permission config: </span>
-Add these permissions (and probably more granular versions of these, relating to specific regions and resources) to the lambda ExecutionRole
+Add these permissions (and probably more granular versions of these, relating 
+
+to specific regions and resources) to the lambda ExecutionRole
 
 AmazonRedshiftFullAccess	
 AmazonRedshiftAllCommandsFullAccess
@@ -54,5 +57,11 @@ Timeout, set to minutes, seconds not the default, set up to 10240 MB memory for 
 ---
 ## <span style="color:gray" fontstyle="bold">Notes: </span>
 On lambda use psycopg2-binary / you can only use psycopg2 on local machines (on 64-bit python)
+
 This configuration is for python 3.7
+
+The COPY command is 30 times faster than an equivalent insert command 
+
+Tested on 15,000 fields. 
+
 
