@@ -1,6 +1,6 @@
 # <span style="color:gray" fontstyle="bold">REDSHIFT LAYER: </span><span style="color:green">PSYCOPG2-BINARY</span>
 
-# postgresql connector 
+# Postgresql connector. 
 
 ## <span style="color:gray" fontstyle="bold">Redshift Config: </span>
 
@@ -15,8 +15,13 @@ On the cluster console, add Actions: Modify publicly accessible setting.
 
 Enable .. and reference the EIP
 
-Wait 10 minutes to allow the cluster to modify. 
+Wait 10 minutes to allow the cluster to modify.
 
+---
+# Redshift specifics
+Ensure that all variables  (field values are overtly null at inception) 
+
+or this will cause errors.
 
 ---
  
@@ -66,4 +71,4 @@ The COPY command is 30 times faster than an equivalent insert command
 
 Tested on 15,000 fields. 
 
-PyArrow is faster than most smilar packages. Pyarrow is a development platform for in-memory analytics. It contains a set of technologies that enable big data systems to store, process and move data fast.
+PyArrow is faster at parquet conversion than most smilar packages. Pyarrow is a development platform for in-memory analytics. It contains a set of technologies that enable big data systems to store, process and move data fast.
