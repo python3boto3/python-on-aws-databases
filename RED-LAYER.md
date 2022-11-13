@@ -33,8 +33,6 @@ On Cloud9 only  basic default t2.micro ami linux settings
 ## <span style="color:gray" fontstyle="bold">Cloud9 script: </span>
 _(Window new terminal)_
 
-cd folder
-
 virtualenv v-env
 
 source ./v-env/bin/activate    
