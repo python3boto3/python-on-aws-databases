@@ -1,5 +1,7 @@
 # <span style="color:gray" fontstyle="bold">REDSHIFT LAYER: </span><span style="color:green">PSYCOPG2-BINARY</span>
 
+# postgresql connector 
+
 ## <span style="color:gray" fontstyle="bold">Redshift Config: </span>
 
 _Ignore this step for the Redshift if it communicates within the vpc internally._
@@ -64,4 +66,4 @@ The COPY command is 30 times faster than an equivalent insert command
 
 Tested on 15,000 fields. 
 
-
+PyArrow is faster than most smilar packages. Pyarrow is a development platform for in-memory analytics. It contains a set of technologies that enable big data systems to store, process and move data fast.
