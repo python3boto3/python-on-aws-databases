@@ -92,7 +92,7 @@ try:
         sqlResult2 = str(sqlResult2).replace("%0D%0A","║")
 
         # create row start markers, replace apostrophe
-        sqlResult2 = str(sqlResult2).replace("'Ticket", "┌Ticket")
+        sqlResult2 = str(sqlResult2).replace("'zd", "┌zd")
         sqlResult2 = str(sqlResult2).replace("[(┌","")
 
         # create row end markers
@@ -104,8 +104,8 @@ try:
 
         sqlResult2 = str(sqlResult2).replace(", ┌","║")
         
-        sqlResult2 = str(sqlResult2).replace("[(","┌ReplicationTimeStamp■")
-        sqlResult2 = str(sqlResult2).replace(" ("," (┌ReplicationTimeStamp■")
+        sqlResult2 = str(sqlResult2).replace("[(","┌zc■")
+        sqlResult2 = str(sqlResult2).replace(" ("," (┌zc■")
         sqlResult2 = str(sqlResult2).replace(", '","║")
 
         sqlResult2 = str(sqlResult2).replace("')","┘')")
@@ -226,8 +226,8 @@ try:
                     zd_ = valueStr
 
             # ensure integer, 7 characters for the replicationtimestamp
-            replicationtimestamp1 = str(replicationtimestamp_)
-            replicationtimestamp1 = int(replicationtimestamp1[:7])
+            replicationtimestamp1 = str(zc_)
+            replicationtimestamp1 = int(zc[:7])
 
             # alternative trim function, cleans trailing spaces and any special characters
             replicationtimestamp_ = replicationtimestamp1
