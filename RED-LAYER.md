@@ -31,17 +31,28 @@ On Cloud9 only  basic default t2.micro ami linux settings
 
 ---
 ## <span style="color:gray" fontstyle="bold">Cloud9 script: </span>
+mkdir folder
+
 cd folder
+
 virtualenv v-env
-source ./v-env/bin/activate             
-pip install psycopg2-binary                          
+
+source ./v-env/bin/activate    
+
+pip install psycopg2-binary 
+
 deactivate
 
 mkdir python
+
 cd python
+
 cp -r ../v-env/lib64/python3.7/site-packages/* .
+
 cd ..
+
 zip -r psycopg2_bin_layer.zip python
+
 aws lambda publish-layer-version --layer-name psycopg2binary --zip-file fileb://
 psycopg2_bin_layer.zip --compatible-runtimes python3.7
 
