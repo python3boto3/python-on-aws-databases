@@ -51,8 +51,7 @@ cd ..
 
 zip -r psycopg2_bin_layer.zip python
 
-aws lambda publish-layer-version --layer-name psycopg2binary --zip-file fileb://
-psycopg2_bin_layer.zip --compatible-runtimes python3.7
+aws lambda publish-layer-version --layer-name psycopg2binary --zip-file fileb://psycopg2_bin_layer.zip --compatible-runtimes python3.7
 
 ---
 
