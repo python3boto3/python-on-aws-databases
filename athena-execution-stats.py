@@ -12,7 +12,7 @@ s3r = session.resource('s3')
 
 ex_response = athc.list_query_executions(
     MaxResults=50,
-    WorkGroup='primary'
+    WorkGroup='core'
 )
 #print(ex_response)
 x = 0
@@ -26,13 +26,13 @@ for i in q:
     id_response_Str = str(id_response)
     xnameStr = ""
     bool = False
-    if 's4_gateway_customer_element_agg' in id_response_Str:
+    if 'ateway_customer_element_agg' in id_response_Str:
         xnameStr = "v_customer_element_2"
         bool = True
-    if 's4_gateway_transaction_base' in id_response_Str:
+    if 'gateway_transaction_base' in id_response_Str:
         xnameStr = 'v_transaction_records'
         bool = True
-    if 's4_gateway_batch_detail' in id_response_Str:
+    if 'gateway_batch_detail' in id_response_Str:
         xnameStr = 'v_gateway_detail'
         bool = True
     if bool == True:
@@ -53,10 +53,10 @@ for i in q:
         # os.environ["s3_dict_path"]:  (replace)
         os.environ["bucket"] = 'v-dev'
         bucket = os.environ["bucket"]
-        os.environ["s3_dict_path"] = 'raw/payments/transactions/archive/tmpF/'
+        os.environ["s3_dict_path"] = 'raw/payments/archive/tmpF/'
         fault_dict = os.environ["s3_dict_path"]
         # Q. Does the key exist in previous faults?
-        bucket_name = "testbucket-frompython-2"
+
         response = s3c.list_objects_v2(Bucket=bucket, Prefix=fault_dict)
         files = response.get("Contents")
         bool_sent_already = False
@@ -66,7 +66,7 @@ for i in q:
             if fault_dict+i == file['Key']:
                 bool_sent_already = True
                 break
-        arn = 'arn:aws:sns:us-east-1:854012215868:bi-test-sns-failure'
+        arn = 'arn:aws:sns:us-east-1:994012123456:test-sns-failure'
         message = message2
         snsc = session.client('sns')
         os.environ["timeout_seconds"] = "2.00"
