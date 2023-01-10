@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 import gzip
-
 import boto3, io, time, os
 from pkg_resources import cleanup_resources
 import pandas as pd, zipfile
